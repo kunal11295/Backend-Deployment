@@ -7,7 +7,6 @@ import router from "./routes/userroutes.js";
 import path from "path";
 import { CronJob } from "cron";
 
-
 const app = express();
 dotenv.config();
 
@@ -16,7 +15,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
 
-const _dirname = path.resolve();
+const __dirname = path.resolve();
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -33,13 +32,7 @@ app.get("/ping", (req, res) => {
 
 
 app.get("/urlencoded", (req, res) => {
-    res.send(
-        `<form method='post' action='/login'>
-            <input name="email" placeholder="text" />
-            <input name="password"  placeholder="password"/>
-            <input type='submit' value="LOgin"/>
-        </form>`
-    )
+    return res.sendFile(__dirname + '/public/login.html');
 })
 
 app.post('/login', (req, res) => {

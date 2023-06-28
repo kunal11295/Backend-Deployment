@@ -1,0 +1,14 @@
+#myId
+{
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0671FF;
+} 
+
+input{
+    font-size: 12px;
+    padding: 5px 7px;
+    margin: 10px 0;
+}
